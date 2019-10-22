@@ -12,6 +12,19 @@ $(document).ready(function() {
   }
   // helper functions
   // events
+  for (i = 0; i < inputTime.length; i++) {
+    let idTime = inputTime[i].id;
+    idTime = parseInt(idTime.slice(0, -1));
+    console.log("id tags", inputTime[i].id);
+    console.log("idTime", idTime);
+    if (currentHour > idTime) {
+      $(`#${inputTime[i].id}`).attr("style", "background-color:silver");
+    } else if (currentHour < idTime) {
+      $(`#${inputTime[i].id}`).attr("style", "background-color: coral");
+    } else if (currentHour === idTime) {
+      $(`#${inputTime[i].id}`).attr("style", "background-color: RosyBrown");
+    }
+  }
   // clicking save button
   $(".js-save").on("click", function() {
     // get key and value

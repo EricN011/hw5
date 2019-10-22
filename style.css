@@ -1,0 +1,40 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+  width: 100%;
+}
+
+.textBox {
+  width: 50%;
+}
+
+.schedBlock {
+  display: flex;
+}
+
+.center-align {
+  align-self: center;
+}
+
+.center-justify {
+  justify-content: center;
+}
+
+.bckgd-past {
+  background-color: red;
+}
+.bckgd-current {
+  background-color: greenyellow;
+}
+.bckgd-default {
+  background-color: gray;
+}

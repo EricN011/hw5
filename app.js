@@ -3,28 +3,27 @@ $(document).ready(function() {
   var tasks = JSON.parse(localStorage.getItem("mySched")) || {};
   // today's date
   function timeDate() {
-    var todaysDate = moment().format("MMM Do YYYY");
-    var todaysTime = moment().format("h:mm a");
-    $("#date").html(`Today is: ${todaysDate}, ${todaysTime}`);
+    var todaysDate = moment().format("MMM Do YYYY, h:mm:ss a");
+    $("#date").html(`Today is: ${todaysDate}`);
     var currentHour = moment().hours();
     console.log(currentHour);
     var inputTime = $("button");
   }
   // helper functions
   // events
-  for (i = 0; i < inputTime.length; i++) {
-    let idTime = inputTime[i].id;
-    idTime = parseInt(idTime.slice(0, -1));
-    console.log("id tags", inputTime[i].id);
-    console.log("idTime", idTime);
-    if (currentHour > idTime) {
-      $(`#${inputTime[i].id}`).attr("style", "background-color:silver");
-    } else if (currentHour < idTime) {
-      $(`#${inputTime[i].id}`).attr("style", "background-color: coral");
-    } else if (currentHour === idTime) {
-      $(`#${inputTime[i].id}`).attr("style", "background-color: RosyBrown");
-    }
-  }
+  //   for (i = 0; i < inputTime.length; i++) {
+  //     let idTime = inputTime[i].id;
+  //     idTime = parseInt(idTime.slice(0, -1));
+  //     console.log("id tags", inputTime[i].id);
+  //     console.log("idTime", idTime);
+  //     if (currentHour > idTime) {
+  //       $(`#${inputTime[i].id}`).attr("style", "background-color:silver");
+  //     } else if (currentHour < idTime) {
+  //       $(`#${inputTime[i].id}`).attr("style", "background-color: coral");
+  //     } else if (currentHour === idTime) {
+  //       $(`#${inputTime[i].id}`).attr("style", "background-color: RosyBrown");
+  //     }
+  //   }
   // clicking save button
   $(".js-save").on("click", function() {
     // get key and value
